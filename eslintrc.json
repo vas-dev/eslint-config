@@ -1,0 +1,54 @@
+{
+  "extends": [
+    "standard",
+    "standard-react",
+    "react-app",
+    "plugin:jest/recommended"
+  ],
+  "plugins": [
+    "react-hooks",
+    "jest",
+    "jest-formatting"
+  ],
+  "environments": {
+    "browser": true,
+    "jasmine": true,
+    "jest": true
+  },
+  "env": {},
+  "rules": {
+    "no-console": "error",
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "prefer-promise-reject-errors": "off",
+    "jest/consistent-test-it": [
+      "error",
+      {
+        "fn": "it"
+      }
+    ],
+    "jest/no-empty-title": "error",
+    "jest/no-truthy-falsy": "error",
+    "jest/no-test-return-statement": "error",
+    "jest/no-test-callback": "error",
+    "jest/prefer-to-be-null": "error",
+    "jest/prefer-to-be-undefined": "error",
+    "jest/prefer-to-have-length": "error",
+    "jest/prefer-to-contain": "error",
+    "jest-formatting/padding-before-test-blocks": "error",
+    "jest-formatting/padding-before-describe-blocks": "error"
+  },
+  "overrides": [
+    {
+      "files": [
+        "src/**/*.tsx"
+      ],
+      "rules": {
+        "react/prop-types": "off"
+      }
+    }
+  ]
+}
