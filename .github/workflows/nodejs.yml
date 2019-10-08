@@ -1,0 +1,32 @@
+name: Build && Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Setup Git
+        run: |
+          git config --global user.email "vas-build@vas.com"
+          git config --global user.name "VAS Build"
+          git config remote.origin.url 'https://vas-build:${{secrets.GITHUB_TOKEN}}@github.com/vas-dev/eslint-config.git'
+          git fetch
+          git checkout master
+      - name: Node
+        uses: actions/setup-node@master
+        with:
+          node-version: 10.x
+      - name: Deps
+        run: yarn install --frozen-lockfile
+      - name: Deploy
+        run: npx semantic-release
+        env:
+          HUSKY_SKIP_HOOKS: 1
+          NPM_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
