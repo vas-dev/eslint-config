@@ -1,0 +1,71 @@
+{
+  "name": "@vas-dev/eslint-config",
+  "description": "VAS ESLint Config",
+  "version": "1.0.0",
+  "keywords": [
+    "eslint",
+    "vas",
+    "standardjs",
+    "react"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vas-dev/vas-fe"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "commit": "git-cz",
+    "lint": "eslint . --max-warnings 0"
+  },
+  "peerDependencies": {
+    "eslint": ">= 6",
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.1.2"
+  },
+  "dependencies": {
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-jest-formatting": "^1.1.0",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0"
+  },
+  "bundledDependencies": [
+    "eslint-plugin-node",
+    "eslint-plugin-promise",
+    "eslint-config-standard",
+    "eslint-config-standard-react",
+    "eslint-plugin-jest",
+    "eslint-plugin-jest-formatting",
+    "eslint-plugin-standard"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "all-contributors-cli": "^6.9.1",
+    "git-cz": "^3.2.1",
+    "husky": "^3.0.8"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "[[ -n $HUSKY_BYPASS ]] || commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
