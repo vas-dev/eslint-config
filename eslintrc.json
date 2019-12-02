@@ -1,5 +1,10 @@
 {
-  "extends": ["standard", "standard-react", "react-app", "plugin:jest/recommended"],
+  "extends": [
+    "standard",
+    "standard-react",
+    "react-app",
+    "plugin:jest/recommended"
+  ],
   "plugins": ["react-hooks", "jest", "jest-formatting"],
   "env": {
     "browser": true,
@@ -8,7 +13,7 @@
   },
   "rules": {
     "no-console": "error",
-    "object-curly-spacing": ["error", "always"],
+    "object-curly-spacing": ["warn", "always"],
     "react-hooks/rules-of-hooks": "error",
     "prefer-promise-reject-errors": "off",
     "jest/consistent-test-it": [
